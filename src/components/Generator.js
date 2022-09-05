@@ -28,28 +28,28 @@ const Generator = () => {
                 />
               </div>
             </div>
-            <div className="flex flex-col gap-2.5 my-5">
+            <div className="my-5 flex flex-col gap-2.5 text-sm sm:text-base ">
               <div className="flex flex-row items-center gap-2.5">
                 <button>
-                  <BsCheck2Square />
+                  <BsCheck2Square className="text-lg" />
                 </button>
                 <p>Include Uppercase Letters</p>
               </div>
               <div className="flex flex-row items-center gap-2.5">
                 <button>
-                  <BsCheck2Square />
+                  <BsCheck2Square className="text-lg" />
                 </button>
                 <p>Include Lowercase Letters</p>
               </div>
               <div className="flex flex-row items-center gap-2.5">
                 <button>
-                  <BsCheck2Square />
+                  <BsCheck2Square className="text-lg" />
                 </button>
                 <p>Include Numbers</p>
               </div>
               <div className="flex flex-row items-center gap-2.5">
                 <button>
-                  <BsCheck2Square />
+                  <BsCheck2Square className="text-lg" />
                 </button>
                 <p>Include Symbols</p>
               </div>
