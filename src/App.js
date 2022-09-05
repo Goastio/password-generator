@@ -3,7 +3,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="min-ƒh-screen bg-neutral-800">
+    <div className="min-h-screen bg-[#0D0C12]">
       <Generator />
     </div>
   );
