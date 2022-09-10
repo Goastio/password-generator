@@ -1,7 +1,20 @@
 import { BsCheck2Square, BsArrowRightShort } from "react-icons/bs";
 import { AiOutlineCopy } from "react-icons/ai";
+import { useState, useEffect } from "react";
 
 const Generator = () => {
+  const [password, setPassword] = useState("");
+
+  const generatePassword = () => {
+    setPassword(() => {
+
+      
+
+    });
+  };
+
+  //
+
   return (
     <>
       <div className="mx-auto flex min-h-screen max-w-screen-sm flex-col justify-center p-10 text-white">
@@ -64,7 +77,7 @@ const Generator = () => {
                 <div className="flex text-xl text-yellow-500">MEDIUM</div>
               </div>
             </div>
-            <button>
+            <button onClick={generatePassword}>
               <div className="mt-5 flex w-full items-center justify-center bg-[#A5FFB3] p-5 font-semibold text-[#0D3318]">
                 GENERATE <BsArrowRightShort className="sm:text-3xl" />
               </div>
