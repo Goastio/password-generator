@@ -10,6 +10,7 @@ const Generator = () => {
   const [numbers, setNumbers] = useState("");
   const [symbols, setSymbols] = useState("");
   const [currentLength, setCurrentLength] = useState(10);
+  const [checkboxes, setCheckboxes] = useState([]);
 
   return (
     <>
@@ -34,6 +35,8 @@ const Generator = () => {
                 setSymbols={setSymbols}
                 currentLength={currentLength}
                 setCurrentLength={setCurrentLength}
+                checkboxes={checkboxes}
+                setCheckboxes={setCheckboxes}
               />
             </div>
             <div className="flex text-[#A5FFB3]">
@@ -44,13 +47,15 @@ const Generator = () => {
             <div className="flex w-full flex-col">
               <div className="flex w-full justify-between">
                 <div className="flex rounded-sm text-sm">Character Length</div>
-                <div className="flex text-xl text-[#A5FFB3]">10</div>
+                <div className="flex text-xl text-[#A5FFB3]">
+                  {currentLength}
+                </div>
               </div>
               <div className="slidecontainer flex">
                 <input
                   type="range"
-                  min="1"
-                  max="100"
+                  min="5"
+                  max="20"
                   className="slider w-full"
                   id="myRange"
                 />
@@ -58,7 +63,26 @@ const Generator = () => {
             </div>
             <div className="my-5 flex flex-col gap-2.5 text-sm sm:text-base ">
               <div className="flex flex-row items-center gap-2.5">
-                <button>
+                <button
+                  onClick={() => {
+                    const isAlreadyChecked = checkboxes.some((l) => {
+                      return l === "uppercaseLetter";
+                    });
+                    if (isAlreadyChecked) {
+                      setCheckboxes((oldCheckboxes) => {
+                        return oldCheckboxes.filter(
+                          (p) => p !== "uppercaseLetter"
+                        );
+                      });
+                    } else {
+                      setCheckboxes((oldCheckboxes) => [
+                        ...oldCheckboxes,
+                        "uppercaseLetter",
+                      ]);
+                    }
+                    console.log(checkboxes);
+                  }}
+                >
                   <BsCheck2Square className="text-lg" />
                 </button>
                 <p>Include Uppercase Letters</p>
