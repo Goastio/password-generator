@@ -1,19 +1,15 @@
 import { BsCheck2Square, BsArrowRightShort } from "react-icons/bs";
 import { AiOutlineCopy } from "react-icons/ai";
 import { useState, useEffect } from "react";
+import Boundary from "./Boundary";
 
 const Generator = () => {
   const [password, setPassword] = useState("");
-
-  const generatePassword = () => {
-    setPassword(() => {
-
-      
-
-    });
-  };
-
-  //
+  const [uppercaseLetter, setUppercaseLetter] = useState([]);
+  const [lowercaseLetter, setLowercaseLetter] = useState("");
+  const [numbers, setNumbers] = useState("");
+  const [symbols, setSymbols] = useState("");
+  const [currentLength, setCurrentLength] = useState(10);
 
   return (
     <>
@@ -24,7 +20,22 @@ const Generator = () => {
 
         <div className="my-5 flex flex-col gap-5">
           <div className="flex w-full flex-row items-center justify-between rounded-sm bg-[#24232B] p-5 sm:text-2xl">
-            <div className="flex tracking-wider">Jx8N9H7ba4</div>
+            <div className="flex tracking-wider">
+              <Boundary
+                password={password}
+                setPassword={setPassword}
+                lowercaseLetter={lowercaseLetter}
+                setLowercaseLetter={setLowercaseLetter}
+                uppercaseLetter={uppercaseLetter}
+                setUppercaseLetter={setUppercaseLetter}
+                numbers={numbers}
+                setNumbers={setNumbers}
+                symbols={symbols}
+                setSymbols={setSymbols}
+                currentLength={currentLength}
+                setCurrentLength={setCurrentLength}
+              />
+            </div>
             <div className="flex text-[#A5FFB3]">
               <AiOutlineCopy />
             </div>
@@ -77,7 +88,7 @@ const Generator = () => {
                 <div className="flex text-xl text-yellow-500">MEDIUM</div>
               </div>
             </div>
-            <button onClick={generatePassword}>
+            <button>
               <div className="mt-5 flex w-full items-center justify-center bg-[#A5FFB3] p-5 font-semibold text-[#0D3318]">
                 GENERATE <BsArrowRightShort className="sm:text-3xl" />
               </div>
