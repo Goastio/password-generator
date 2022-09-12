@@ -47,6 +47,7 @@ const Boundary = ({
       mySymbols.push(mySymbol);
     }
     setSymbols((prev) => [...prev, ...mySymbols]);
+    
   };
 
   // const scrambler = () => {};
@@ -57,9 +58,7 @@ const Boundary = ({
     }
   }, [uppercaseLetter, lowercaseLetter, numbers, symbols]);
 
-  useEffect(() => {
-    randomSymbols();
-  }, []);
+
 
   return <div>{password}</div>;
 };
