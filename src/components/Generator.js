@@ -9,8 +9,10 @@ const Generator = () => {
   const [lowercaseLetter, setLowercaseLetter] = useState("");
   const [numbers, setNumbers] = useState("");
   const [symbols, setSymbols] = useState("");
-  const [currentLength, setCurrentLength] = useState(10);
-  const [checkboxes, setCheckboxes] = useState([]);
+  const [currentLength, setCurrentLength] = useState(5);
+  const [isActive, setIsActive] = useState(false);
+
+  console.log(isActive);
 
   return (
     <>
@@ -35,8 +37,8 @@ const Generator = () => {
                 setSymbols={setSymbols}
                 currentLength={currentLength}
                 setCurrentLength={setCurrentLength}
-                checkboxes={checkboxes}
-                setCheckboxes={setCheckboxes}
+                isActive={isActive}
+                setIsActive={setIsActive}
               />
             </div>
             <div className="flex text-[#A5FFB3]">
@@ -65,22 +67,11 @@ const Generator = () => {
               <div className="flex flex-row items-center gap-2.5">
                 <button
                   onClick={() => {
-                    const isAlreadyChecked = checkboxes.some((l) => {
-                      return l === "uppercaseLetter";
-                    });
-                    if (isAlreadyChecked) {
-                      setCheckboxes((oldCheckboxes) => {
-                        return oldCheckboxes.filter(
-                          (p) => p !== "uppercaseLetter"
-                        );
-                      });
+                    if (isActive === false) {
+                      setIsActive(true);
                     } else {
-                      setCheckboxes((oldCheckboxes) => [
-                        ...oldCheckboxes,
-                        "uppercaseLetter",
-                      ]);
+                      setIsActive(false);
                     }
-                    console.log(checkboxes);
                   }}
                 >
                   <BsCheck2Square className="text-lg" />

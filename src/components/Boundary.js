@@ -13,8 +13,8 @@ const Boundary = ({
   setSymbols,
   currentLength,
   setCurrentLength,
-  checkboxes,
-  setCheckboxes,
+  isActive,
+  setIsActive,
 }) => {
   const randomUppercaseLetter = () => {
     for (let i = 0; i < 10; i++) {
@@ -39,15 +39,13 @@ const Boundary = ({
 
   const randomSymbols = () => {
     const mySymbols = [];
-
-    for (let i = 0; i < currentLength / checkboxes.length; i++) {
+    for (let i = 0; i < currentLength; i++) {
       const syms = "/?\\{}][,.><+=-_!@#$%".split("");
       const rando = Math.floor(Math.random() * syms.length);
       const mySymbol = syms[rando];
       mySymbols.push(mySymbol);
     }
     setSymbols((prev) => [...prev, ...mySymbols]);
-    
   };
 
   // const scrambler = () => {};
@@ -57,8 +55,6 @@ const Boundary = ({
       setPassword();
     }
   }, [uppercaseLetter, lowercaseLetter, numbers, symbols]);
-
-
 
   return <div>{password}</div>;
 };
