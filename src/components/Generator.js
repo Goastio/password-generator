@@ -14,6 +14,8 @@ const Generator = () => {
 
   console.log(isActive);
 
+  
+
   return (
     <>
       <div className="mx-auto flex min-h-screen max-w-screen-sm flex-col justify-center p-10 text-white">

@@ -51,7 +51,7 @@ const Boundary = ({
   // const scrambler = () => {};
 
   useEffect(() => {
-    if (uppercaseLetter && lowercaseLetter && numbers && symbols) {
+    if (uppercaseLetter || lowercaseLetter || numbers || symbols === true) {
       setPassword();
     }
   }, [uppercaseLetter, lowercaseLetter, numbers, symbols]);
