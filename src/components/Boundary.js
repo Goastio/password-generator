@@ -48,13 +48,18 @@ const Boundary = ({
     setSymbols((prev) => [...prev, ...mySymbols]);
   };
 
-  // const scrambler = () => {};
+  const activate = () => {
+    if (isActive === true) {
+      setPassword().include();
+    }
+  };
 
   useEffect(() => {
-    if (uppercaseLetter || lowercaseLetter || numbers || symbols === true) {
-      setPassword();
+    if (uppercaseLetter || lowercaseLetter || numbers || symbols) {
+      setPassword(symbols);
+      console.log(symbols);
     }
-  }, [uppercaseLetter, lowercaseLetter, numbers, symbols]);
+  }, [uppercaseLetter, lowercaseLetter, numbers, symbols, password]);
 
   return <div>{password}</div>;
 };
