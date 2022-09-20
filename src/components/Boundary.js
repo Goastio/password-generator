@@ -54,6 +54,7 @@ const Boundary = ({
     }
   };
 
+
   useEffect(() => {
     if (uppercaseLetter || lowercaseLetter || numbers || symbols) {
       setPassword(symbols);

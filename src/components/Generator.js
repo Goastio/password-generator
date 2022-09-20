@@ -12,7 +12,6 @@ const Generator = () => {
   const [currentLength, setCurrentLength] = useState(5);
   const [isActive, setIsActive] = useState(false);
 
-  console.log(isActive);
 
   return (
     <>
@@ -58,7 +57,9 @@ const Generator = () => {
                   type="range"
                   min="5"
                   max="20"
+                  defaultValue={currentLength}
                   className="slider w-full"
+                  onChange={sliderBounds}
                   id="myRange"
                 />
               </div>
