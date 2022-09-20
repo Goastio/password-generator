@@ -59,7 +59,6 @@ const Generator = () => {
                   max="20"
                   defaultValue={currentLength}
                   className="slider w-full"
-                  onChange={sliderBounds}
                   id="myRange"
                 />
               </div>
