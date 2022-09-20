@@ -40,7 +40,7 @@ const Boundary = ({
   const randomSymbols = () => {
     const mySymbols = [];
     for (let i = 0; i < currentLength; i++) {
-      const syms = "/?\\{}][,.><+=-_!@#$%".split("");
+      const syms = "/?{}][,.><+=-_!@#$%".split("");
       const rando = Math.floor(Math.random() * syms.length);
       const mySymbol = syms[rando];
       mySymbols.push(mySymbol);
@@ -48,19 +48,24 @@ const Boundary = ({
     setSymbols((prev) => [...prev, ...mySymbols]);
   };
 
-  const activate = () => {
-    if (isActive === true) {
-      setPassword().include();
-    }
+  const generatePassword = (e) => {
+
+    setPassword(() => {
+      
+    })
+
   };
 
+  useEffect(() => {
+    randomUppercaseLetter();
+  }, []);
 
   useEffect(() => {
-    if (uppercaseLetter || lowercaseLetter || numbers || symbols) {
-      setPassword(symbols);
-      console.log(symbols);
+    if (isActive === true) {
+      setPassword(uppercaseLetter);
     }
-  }, [uppercaseLetter, lowercaseLetter, numbers, symbols, password]);
+    console.log(password);
+  }, [uppercaseLetter]);
 
   return <div>{password}</div>;
 };

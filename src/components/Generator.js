@@ -12,7 +12,8 @@ const Generator = () => {
   const [currentLength, setCurrentLength] = useState(5);
   const [isActive, setIsActive] = useState(false);
 
-
+  console.log(isActive);
+  
   return (
     <>
       <div className="mx-auto flex min-h-screen max-w-screen-sm flex-col justify-center p-10 text-white">
@@ -72,6 +73,7 @@ const Generator = () => {
                     } else {
                       setIsActive(false);
                     }
+         
                   }}
                 >
                   <BsCheck2Square className="text-lg" />
@@ -105,7 +107,8 @@ const Generator = () => {
             </div>
             <button>
               <div className="mt-5 flex w-full items-center justify-center bg-[#A5FFB3] p-5 font-semibold text-[#0D3318]">
-                GENERATE<BsArrowRightShort className="sm:text-3xl" />
+                GENERATE
+                <BsArrowRightShort className="sm:text-3xl" />
               </div>
             </button>
           </div>
