@@ -12,6 +12,15 @@ const Generator = () => {
   const [currentLength, setCurrentLength] = useState(5);
   const [isActive, setIsActive] = useState(false);
 
+
+  const updateSliderValue = (e) => {
+
+    setCurrentLength({value: e.target.value})
+
+  }
+
+
+
   console.log(isActive);
   
   return (

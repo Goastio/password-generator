@@ -16,6 +16,7 @@ const Boundary = ({
   isActive,
   setIsActive,
 }) => {
+
   const randomUppercaseLetter = () => {
     for (let i = 0; i < 10; i++) {
       const rando = String.fromCharCode(65 + Math.floor(Math.random() * 26));
@@ -49,11 +50,8 @@ const Boundary = ({
   };
 
   const generatePassword = (e) => {
-
-    setPassword(() => {
-      
+    setPassword(() => {  
     })
-
   };
 
   useEffect(() => {
