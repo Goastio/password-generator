@@ -56,7 +56,7 @@ const Boundary = ({
 
   useEffect(() => {
     randomUppercaseLetter();
-  }, []);
+  }, []); 
 
   useEffect(() => {
     if (isActive === true) {
