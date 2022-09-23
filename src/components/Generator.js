@@ -5,24 +5,15 @@ import Boundary from "./Boundary";
 
 const Generator = () => {
   const [password, setPassword] = useState("");
-  const [uppercaseLetter, setUppercaseLetter] = useState([]);
+  const [uppercaseLetter, setUppercaseLetter] = useState("");
   const [lowercaseLetter, setLowercaseLetter] = useState("");
   const [numbers, setNumbers] = useState("");
   const [symbols, setSymbols] = useState("");
   const [currentLength, setCurrentLength] = useState(5);
   const [isActive, setIsActive] = useState(false);
 
-
-  const updateSliderValue = (e) => {
-
-    setCurrentLength({value: e.target.value})
-
-  }
-
-
-
   console.log(isActive);
-  
+
   return (
     <>
       <div className="mx-auto flex min-h-screen max-w-screen-sm flex-col justify-center p-10 text-white">
@@ -64,6 +55,7 @@ const Generator = () => {
               </div>
               <div className="slidecontainer flex">
                 <input
+                  onChange={(e) => setCurrentLength(e.target.value)}
                   type="range"
                   min="5"
                   max="20"
@@ -82,7 +74,6 @@ const Generator = () => {
                     } else {
                       setIsActive(false);
                     }
-         
                   }}
                 >
                   <BsCheck2Square className="text-lg" />
