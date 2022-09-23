@@ -52,7 +52,7 @@ const Boundary = ({
   const generatePassword = (e) => {
     setPassword(() => {  
     })
-  };
+  }; 
 
   useEffect(() => {
     randomUppercaseLetter();
