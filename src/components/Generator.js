@@ -12,7 +12,7 @@ const Generator = () => {
   const [currentLength, setCurrentLength] = useState(5);
   const [isActive, setIsActive] = useState(false);
 
-  console.log(isActive);
+
 
   return (
     <>
