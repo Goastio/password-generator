@@ -1,7 +1,6 @@
 import { BsCheck2Square, BsArrowRightShort } from "react-icons/bs";
 import { AiOutlineCopy } from "react-icons/ai";
 import { useState, useEffect } from "react";
-import Boundary from "./Boundary";
 
 const Generator = () => {
   const [password, setPassword] = useState("");
@@ -12,7 +11,53 @@ const Generator = () => {
   const [currentLength, setCurrentLength] = useState(5);
   const [isActive, setIsActive] = useState(false);
 
- 
+  const randomUppercaseLetter = () => {
+    for (let i = 0; i < currentLength; i++) {
+      const rando = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+      setUppercaseLetter((prev) => [...prev, rando]);
+    }
+  };
+
+  const randomLowercaseLetter = () => {
+    for (let i = 0; i < currentLength; i++) {
+      const rando = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+      setLowercaseLetter((prev) => [...prev, rando]);
+    }
+  };
+
+  const randomNumbers = () => {
+    for (let i = 0; i < currentLength; i++) {
+      const rando = String.fromCharCode(48 + Math.floor(Math.random() * 10));
+      setNumbers((prev) => [...prev, rando]);
+    }
+  };
+
+  const randomSymbols = () => {
+    const mySymbols = [];
+    for (let i = 0; i < currentLength; i++) {
+      const syms = "/?{}][,.><+=-_!@#$%".split("");
+      const rando = Math.floor(Math.random() * syms.length);
+      const mySymbol = syms[rando];
+      mySymbols.push(mySymbol);
+    }
+    setSymbols((prev) => [...prev, ...mySymbols]);
+  };
+
+  const scramble = (e) => {
+    let total = []
+    
+    randomUppercaseLetter();
+    randomLowercaseLetter();
+    randomNumbers();
+    randomSymbols();
+  };
+
+  const generatePass = (e) => {
+
+    scramble();
+    setPassword(uppercaseLetter);
+
+  };
 
   return (
     <>
@@ -23,24 +68,7 @@ const Generator = () => {
 
         <div className="my-5 flex flex-col gap-5">
           <div className="flex w-full flex-row items-center justify-between rounded-sm bg-[#24232B] p-5 sm:text-2xl">
-            <div className="flex tracking-wider">
-              <Boundary
-                password={password}
-                setPassword={setPassword}
-                lowercaseLetter={lowercaseLetter}
-                setLowercaseLetter={setLowercaseLetter}
-                uppercaseLetter={uppercaseLetter}
-                setUppercaseLetter={setUppercaseLetter}
-                numbers={numbers}
-                setNumbers={setNumbers}
-                symbols={symbols}
-                setSymbols={setSymbols}
-                currentLength={currentLength}
-                setCurrentLength={setCurrentLength}
-                isActive={isActive}
-                setIsActive={setIsActive}
-              />
-            </div>
+            <div className="flex tracking-wider">{password}</div>
             <div className="flex text-[#A5FFB3]">
               <AiOutlineCopy />
             </div>
@@ -105,7 +133,7 @@ const Generator = () => {
                 <div className="flex text-xl text-yellow-500">MEDIUM</div>
               </div>
             </div>
-            <button>
+            <button onClick={generatePass}>
               <div className="mt-5 flex w-full items-center justify-center bg-[#A5FFB3] p-5 font-semibold text-[#0D3318]">
                 GENERATE
                 <BsArrowRightShort className="sm:text-3xl" />
