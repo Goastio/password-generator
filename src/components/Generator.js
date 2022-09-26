@@ -45,7 +45,6 @@ const Generator = () => {
 
   const scramble = (e) => {
     let total = []
-    
     randomUppercaseLetter();
     randomLowercaseLetter();
     randomNumbers();
