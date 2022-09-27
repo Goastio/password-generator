@@ -41,7 +41,7 @@ const Generator = () => {
       mySymbols.push(mySymbol);
     }
     setSymbols((prev) => [...prev, ...mySymbols]);
-  };
+  }; 
 
   const scramble = (e) => {
     let total = []
