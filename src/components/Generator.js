@@ -118,7 +118,7 @@ const Generator = () => {
                   <BsCheck2Square className="text-lg" />
                 </button>
                 <p>Include Numbers</p>
-              </div> 
+              </div>
               <div className="flex flex-row items-center gap-2.5">
                 <button>
                   <BsCheck2Square className="text-lg" />
